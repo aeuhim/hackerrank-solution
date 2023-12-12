@@ -19,21 +19,17 @@ def pickingNumbers(a):
     i = 0
     base_index = 0
     base_number = a[0]
-    flag = True
     count = 0
     max_count = 0
     while i < len(a):
-        if a[i] != a[base_index] and flag:
+        if a[i] != a[base_index]:
             base_index = i
-            flag = False
-
         if abs(a[i] - base_number) <= 1:
             count += 1
             max_count = count if max_count < count else max_count
         else:
             i = base_index
             base_number = a[base_index]
-            flag = True
             count = 0
             continue
 
